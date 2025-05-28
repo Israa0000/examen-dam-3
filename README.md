@@ -28,3 +28,23 @@ Deberás implementar cuantas más funcionalidades puedas de las siguientes:
   - El formulario de registro debe solicitar un `username`, `password`.
 - Añade un linter y crea un script `lint` en el `package.json` que arregle los errores de estilo.
 - Busca información sobre el sistema de autenticación usado en este proyecto, documenta **como funciona**, además de **sus ventajas y desventajas** frente a otros mecanismos de autenticación.
+
+npm run start = node
+npm run dev = nodemon
+
+### Sistema de autenticación usado: HTTP Basic Auth
+
+Aquí usamos lo más básico: HTTP Basic Auth. Básicamente, cuando quieres entrar a una parte privada, el navegador te pide usuario y contraseña. Eso se manda al servidor (en cada petición) y si coincide con lo que hay en la base de datos, te deja pasar.
+
+Fuente: https://es.wikipedia.org/wiki/Autenticaci%C3%B3n_de_acceso_b%C3%A1sica
+
+**Ventajas:**  
+- Es fácil de poner, no hay que instalar casi nada.
+- Funciona en cualquier navegador o programa que haga peticiones.
+
+**Desventajas:**  
+- No es seguro si no usas HTTPS, porque cualquiera puede ver tu usuario y contraseña si intercepta la red.
+- No hay sesiones ni nada moderno, solo usuario y contraseña cada vez.
+- No es buena idea para proyectos grandes o importantes.
+
+está bien para pruebas o cosas pequeñas, pero para algo serio mejor usar otro sistema
